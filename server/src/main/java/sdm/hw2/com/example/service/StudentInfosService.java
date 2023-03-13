@@ -9,18 +9,18 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-import sdm.hw2.com.example.model.EnrollmentModel;
-import sdm.hw2.com.example.repository.EnrollmentRepo;
+import sdm.hw2.com.example.model.StudentInfosModel;
+import sdm.hw2.com.example.repository.StudentInfosRepo;
 import sdm.hw2.com.example.ResponseObj.SemesterObj;
 import sdm.hw2.com.example.ResponseObj.CourseObj;
 
 @Service
-public class EnrollmentService {
+public class StudentInfosService {
     
     @Autowired
-	EnrollmentRepo EnrollmentRepo;
+	StudentInfosRepo EnrollmentRepo;
 
-	public void addStudent(EnrollmentModel enrollments){
+	public void addStudent(StudentInfosModel enrollments){
 		EnrollmentRepo.addStudent(enrollments);
 	}
 	

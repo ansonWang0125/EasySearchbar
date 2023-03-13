@@ -3,10 +3,11 @@ package sdm.hw2.com.example.model;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CourseModel {
+public class CourseInfosModel {
     private Long id;
     private String SID;
     private String Course;
+    private String Semester;
 
     public Long getId() {
         return id;
@@ -30,5 +31,13 @@ public class CourseModel {
     
     public void setCourse(String Course) {
         this.Course = Course;
+    }
+
+    public String getSemester() {
+        return Semester;
+    }
+    
+    public void setSemester(String Semester) {
+        this.Semester = Semester;
     }
 }

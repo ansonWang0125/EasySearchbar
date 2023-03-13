@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-import sdm.hw2.com.example.model.EnrollmentModel;
-import sdm.hw2.com.example.service.EnrollmentService;
+import sdm.hw2.com.example.model.StudentInfosModel;
+import sdm.hw2.com.example.service.StudentInfosService;
 import sdm.hw2.com.example.RequestObj.SearchObject;
 import sdm.hw2.com.example.RequestObj.InfoObject;
 import sdm.hw2.com.example.ResponseObj.SemesterObj;
@@ -23,15 +23,15 @@ import sdm.hw2.com.example.ResponseObj.CourseObj;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/enrollment")
-public class EnrollmentController {
+public class StudentsInfosController {
         @Autowired
-		EnrollmentModel EnrollmentModel;
+		StudentInfosModel EnrollmentModel;
         
 		@Autowired
-		EnrollmentService EnrollmentService;
+		StudentInfosService EnrollmentService;
 		@GetMapping("/addStudent")
 	    public String hello(){
-	    	EnrollmentModel = new EnrollmentModel();
+	    	EnrollmentModel = new StudentInfosModel();
 	    	EnrollmentModel.setSID("0001");
 	    	EnrollmentModel.setName("Steve");
 	    	EnrollmentService.addStudent(EnrollmentModel);
@@ -64,7 +64,6 @@ public class EnrollmentController {
 	    	} else {
 	    		map.put("success", false);
 	    	}
-//	    	String res = JSON.toJSONString(map);
 	        return map;
 	    }
 }

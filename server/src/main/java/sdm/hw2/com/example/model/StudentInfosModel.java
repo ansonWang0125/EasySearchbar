@@ -3,7 +3,7 @@ package sdm.hw2.com.example.model;
 import org.springframework.stereotype.Component;
 
 @Component
-public class EnrollmentModel {
+public class StudentInfosModel {
     private String SID;
     private String Name;
 

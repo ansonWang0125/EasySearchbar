@@ -9,16 +9,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
-import sdm.hw2.com.example.model.SemesterModel;
-import sdm.hw2.com.example.repository.SemesterRepo;
+import sdm.hw2.com.example.model.CourseInfosModel;
+import sdm.hw2.com.example.repository.CourseInfosRepo;
 
 @Service
-public class SemesterService {
+public class CourseInfosService {
     
     @Autowired
-	SemesterRepo SemesterRepo;
+	CourseInfosRepo CourseRepo;
 
-    public void addSemester(SemesterModel SemesterModel){
-		SemesterRepo.addSemester(SemesterModel);
+    public void addCourse(CourseInfosModel CourseModel){
+		CourseRepo.addCourse(CourseModel);
 	}
 }

@@ -34,14 +34,11 @@ public class Hw2Application {
 
             // Step 3: Create a new table
             stmt = conn.createStatement();
-            String sql = "CREATE TABLE IF NOT EXISTS Enrollments (SID VARCHAR(255) PRIMARY KEY, NAME VARCHAR(255))";
+            String sql = "CREATE TABLE IF NOT EXISTS StudentInfos (SID VARCHAR(255) PRIMARY KEY, NAME VARCHAR(255))";
             stmt.executeUpdate(sql);
             System.out.println("Table created successfully!");
-            String sql1 = "CREATE TABLE IF NOT EXISTS Courses (id BIGINT AUTO_INCREMENT PRIMARY KEY, SID VARCHAR(255), Course VARCHAR(255), FOREIGN KEY (SID) REFERENCES Enrollments(SID))";
+            String sql1 = "CREATE TABLE IF NOT EXISTS CourseInfos (id BIGINT AUTO_INCREMENT PRIMARY KEY, SID VARCHAR(255), Course VARCHAR(255), Semester VARCHAR(255), FOREIGN KEY (SID) REFERENCES StudentInfos(SID))";
             stmt.executeUpdate(sql1);
-            System.out.println("Table created successfully!");
-            String sql2 = "CREATE TABLE IF NOT EXISTS Semesters (id BIGINT AUTO_INCREMENT PRIMARY KEY, SID VARCHAR(255), Semester VARCHAR(255), FOREIGN KEY (SID) REFERENCES Enrollments(SID))";
-            stmt.executeUpdate(sql2);
             System.out.println("Table created successfully!");
 
         } catch (ClassNotFoundException e) {
